@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MimicAPI.Data;
 using MimicAPI.Helpers;
 using MimicAPI.Models;
+using MimicAPI.Models.DTO;
 using MimicAPI.Repositories.Contracts;
 using Newtonsoft.Json;
 
@@ -18,10 +20,12 @@ namespace MimicAPI.Controllers
     public class WordController : ControllerBase
     {
         private readonly IWordRepository _repository;
+        private readonly IMapper _mapper;
 
-        public WordController(IWordRepository repository)
+        public WordController(IWordRepository repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         // GET: api/Word
@@ -30,12 +34,6 @@ namespace MimicAPI.Controllers
         {
 
             var item = _repository.GetWord(query);
-
-            //if (query.PageNumber > item.Pagination.TotalPages)
-            //{
-            //    return NotFound();
-            //}
-
 
             if (query.PageNumber != null)
             {
@@ -66,7 +64,12 @@ namespace MimicAPI.Controllers
                 return NotFound();
             }
 
-            return Ok(word);
+            WordDTO wordDTO = _mapper.Map<Word, WordDTO>(word);
+            wordDTO.Links = new List<LinkDTO>();
+            wordDTO.Links.Add(
+                new LinkDTO("self", $"https://localhost:5001/api/Word/{wordDTO.WordID}", "GET"));
+
+            return Ok(wordDTO);
         }
 
         // PUT: api/Word/5

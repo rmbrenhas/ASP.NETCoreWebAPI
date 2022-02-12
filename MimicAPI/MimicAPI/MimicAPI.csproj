@@ -5,14 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Repositories\NewFolder\**" />
-    <Content Remove="Repositories\NewFolder\**" />
-    <EmbeddedResource Remove="Repositories\NewFolder\**" />
-    <None Remove="Repositories\NewFolder\**" />
+    <Compile Remove="V1\Repositories\NewFolder\**" />
+    <Content Remove="V1\Repositories\NewFolder\**" />
+    <EmbeddedResource Remove="V1\Repositories\NewFolder\**" />
+    <None Remove="V1\Repositories\NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.0.0-preview8.19405.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="3.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.21" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.21" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.21">

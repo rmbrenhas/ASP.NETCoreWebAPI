@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\GITHUB\\ASP.NETCoreWebAPI\\Seção 04\\10022022_2\\MimicAPI\\MimicAPI\\MimicAPI.csproj": {}
+    "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\11022022\\MimicAPI\\MimicAPI\\MimicAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\GITHUB\\ASP.NETCoreWebAPI\\Seção 04\\10022022_2\\MimicAPI\\MimicAPI\\MimicAPI.csproj": {
+    "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\11022022\\MimicAPI\\MimicAPI\\MimicAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\GITHUB\\ASP.NETCoreWebAPI\\Seção 04\\10022022_2\\MimicAPI\\MimicAPI\\MimicAPI.csproj",
+        "projectUniqueName": "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\11022022\\MimicAPI\\MimicAPI\\MimicAPI.csproj",
         "projectName": "MimicAPI",
-        "projectPath": "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\GITHUB\\ASP.NETCoreWebAPI\\Seção 04\\10022022_2\\MimicAPI\\MimicAPI\\MimicAPI.csproj",
+        "projectPath": "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\11022022\\MimicAPI\\MimicAPI\\MimicAPI.csproj",
         "packagesPath": "C:\\Users\\rmarinho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\GITHUB\\ASP.NETCoreWebAPI\\Seção 04\\10022022_2\\MimicAPI\\MimicAPI\\obj\\",
+        "outputPath": "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\11022022\\MimicAPI\\MimicAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rmarinho\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,14 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[4.0.0-preview8.19405.7, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
+              "target": "Package",
+              "version": "[3.2.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

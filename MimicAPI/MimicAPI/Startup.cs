@@ -12,8 +12,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MimicAPI.Repositories;
-using MimicAPI.Repositories.Contracts;
+using MimicAPI.V1.Repositories;
+using MimicAPI.V1.Repositories.Contracts;
 using AutoMapper;
 using MimicAPI.Helpers;
 
@@ -47,6 +47,13 @@ namespace MimicAPI
             });
             IMapper mapper = config.CreateMapper();
             services.AddSingleton(mapper); // TODO RMB: Instacia apenas uma classe para toda a app
+
+            //TODO RMB : Adicionar serviço versionamento
+            services.AddApiVersioning(cfg =>
+            {
+                cfg.ReportApiVersions = true;
+                cfg.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+            });
 
         }
 

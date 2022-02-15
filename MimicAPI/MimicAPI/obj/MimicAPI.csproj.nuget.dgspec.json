@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\11022022\\MimicAPI\\MimicAPI\\MimicAPI.csproj": {}
+    "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\12022022\\MimicAPI\\MimicAPI\\MimicAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\11022022\\MimicAPI\\MimicAPI\\MimicAPI.csproj": {
+    "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\12022022\\MimicAPI\\MimicAPI\\MimicAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\11022022\\MimicAPI\\MimicAPI\\MimicAPI.csproj",
+        "projectUniqueName": "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\12022022\\MimicAPI\\MimicAPI\\MimicAPI.csproj",
         "projectName": "MimicAPI",
-        "projectPath": "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\11022022\\MimicAPI\\MimicAPI\\MimicAPI.csproj",
+        "projectPath": "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\12022022\\MimicAPI\\MimicAPI\\MimicAPI.csproj",
         "packagesPath": "C:\\Users\\rmarinho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\11022022\\MimicAPI\\MimicAPI\\obj\\",
+        "outputPath": "C:\\Users\\rmarinho\\Desktop\\RICARDO BRENHAS\\UDEMY\\Seção 04\\12022022\\MimicAPI\\MimicAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rmarinho\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -69,6 +69,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
             }
           },
           "imports": [

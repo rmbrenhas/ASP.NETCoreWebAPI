@@ -16,6 +16,8 @@ using MimicAPI.V1.Repositories;
 using MimicAPI.V1.Repositories.Contracts;
 using AutoMapper;
 using MimicAPI.Helpers;
+using Microsoft.OpenApi.Models;
+using MimicAPI.Helpers.Swagger;
 
 namespace MimicAPI
 {
@@ -55,6 +57,44 @@ namespace MimicAPI
                 cfg.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
             });
 
+            //TODO RMB: Adicionar Swagger
+            services.AddSwaggerGen(cfg =>
+            {
+                cfg.ResolveConflictingActions(apiDescription => apiDescription.First());
+                cfg.SwaggerDoc("v1.0", new OpenApiInfo 
+                {                     
+                    Title = "MimicAPI - V1.0",
+                    Version = "V1.0"
+                }); ;
+                cfg.SwaggerDoc("v1.1", new OpenApiInfo
+                {
+                    Title = "MimicAPI - V1.1",
+                    Version = "V1.1"
+                }); ;
+                cfg.SwaggerDoc("v2.0", new OpenApiInfo
+                {
+                    Title = "MimicAPI - V2.0",
+                    Version = "V2.0"
+                }); ;
+                cfg.DocInclusionPredicate((docName, apiDesc) =>
+                {
+                    var actionApiVersionModel = apiDesc.ActionDescriptor?.GetApiVersion();
+                    // would mean this action is unversioned and should be included everywhere
+                    if (actionApiVersionModel == null)
+                    {
+                        return true;
+                    }
+                    if (actionApiVersionModel.DeclaredApiVersions.Any())
+                    {
+                        return actionApiVersionModel.DeclaredApiVersions.Any(v => $"v{v.ToString()}" == docName);
+                    }
+                    return actionApiVersionModel.ImplementedApiVersions.Any(v => $"v{v.ToString()}" == docName);
+                });
+            });
+
+            services.AddMvc(c => c.Conventions.Add(new ApiExplorerGroupPerVersionConvention()));
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,11 +107,13 @@ namespace MimicAPI
 
             //TODO RMB: Chamar o método seed com os dados iniciais
 
+
             context.Seed();
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
 
             app.UseAuthorization();
 
@@ -79,6 +121,19 @@ namespace MimicAPI
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(cfg =>
+            {
+                cfg.SwaggerEndpoint("/swagger/v1.0/swagger.json", "MimicAPI - 1.0");
+                cfg.SwaggerEndpoint("/swagger/v1.1/swagger.json", "MimicAPI - 1.1");
+                cfg.SwaggerEndpoint("/swagger/v2.0/swagger.json", "MimicAPI - 2.0");
+
+                cfg.RoutePrefix = string.Empty;
+            });
+
+
+
         }
     }
 }
